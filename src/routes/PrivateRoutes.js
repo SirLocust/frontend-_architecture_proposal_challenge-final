@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 const PrivateRoutes = ({ user, children }) => {
   if (!user) {
     return <Navigate to="/login" replace={false} />;
