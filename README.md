@@ -6,6 +6,16 @@
 
 ## ESTRUCTURA DE CARPETAS
 
+    ├── src
+    │   ├── api
+    │   ├── common
+    │   ├── config
+    │   ├── environments
+    │   ├── pages
+    │   ├── routes
+    │   ├── state
+    │   └── thunkAction.js
+
 ### `api`
 
     se propone que en este folder vaya todo tipo de peticiones http , debe ir un archivo con el nombre o contexto de las peticiones.
@@ -15,28 +25,84 @@
     │   ├── cursosRequest.js
     │   └── programasRequest.js
 
-
 ### `common`
 
     se propone que en este folder vaya todos los componentes que se utilizaran en varios componentes o Pages o que no tiene la necesidad de ser agregados en el page File
+    ├── common
+    │   ├── ButtonsExample.jsx
+    │   ├── PageExample.jsx
+    │   └── Footer.jsx
 
 ### `config`
 
     aqui se propone que vaya todo lo referente a configuraciones
+    ├── config
+    │   ├── firebase.config.js
+    │   └── example.config.js
 
 ### `environments`
 
     aqui todas las variables de entorno se agregaran al ya archivo environment existente como un atributo del objeto de este archivo
+    ├── environments
+    │   └── environment.js
 
 ### `pages`
 
     aqui se propone que vallan todos los componentes grandes con una estructura de Una carpeta con el nombre de la componente y adentro una Page componente con el contexto de este componente adicionalmente un folder llamado componnets
+    ├── pages
+    │   ├── CursosPage
+    │   │   ├── CursosPageComponent.js
+    │   │   └── components
+    │   │       └── CursosFormComponent.jsx
+    │   └── HomePage
+    │       ├── components
+    │       │   ├── ArticleListComponent.jsx
+    │       │   ├── CategoryComponent.jsx
+    │       │   └── HomePageComponent.jsx
+    │       └── HomePageContainer.js
 
 ### `routes`
 
+    aqui hay un archivo llamado routes donde cada equipo podra agregar sus rutas a un objeto javascript sin tener que tocar el componente de rutas y la estructura llevara solo el archivo routes y el PrivateRoute
+    ├── routes
+    │       │   ├── PrivateRoutes.js
+    │       │   └── routes.js
+
+```javascript
+export const routesApp = [
+  {
+    path: '/home',
+    name: 'Home',
+    component: <HomePageComponent />,
+    exact: true,
+  },
+  {
+    path: '/cursos',
+    name: 'Cursos',
+    component: <CursoPageComponent />,
+    exact: true,
+  },
+];
+```
+
 ### `state`
 
+    en este apartado ira todo lo que respecta al redux y los estados
+    ├── state
+    │   ├── article
+    │   │   ├── articleActions.js
+    │   │   └── articleReducer.js
+    │   ├── category
+    │   │   ├── categoryActions.js
+    │   │   └── categoryReducer.js
+    │   ├── store.js
+    │   └── user
+    │       ├── userActions.js
+    │       └── userReducer.js
+
 ### `thunkAction`
+
+    en construccion .........
 
 ## Getting Started with Create React App
 
