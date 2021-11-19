@@ -1,6 +1,5 @@
-import { signOut } from '@firebase/auth';
 import { createSlice } from '@reduxjs/toolkit';
-import { loginWhitGoogle } from '../../thunkAction/authThunk';
+import { loginWhitGoogle, signOut } from '../../thunkAction/authThunk';
 
 const initialState = {
   user: null,
@@ -8,7 +7,7 @@ const initialState = {
   error: null,
 };
 
-export const authSlice = createSlice({
+export const authReducer = createSlice({
   name: 'auth',
   initialState,
   reducers: {},
@@ -26,10 +25,9 @@ export const authSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(signOut.fulfilled, (state, action) => {
-        state.email = initialState.email;
-        state.uid = initialState.uid;
+        state.user = initialState.user;
       });
   },
 });
 
-export default authSlice.reducer;
+export default authReducer.reducer;

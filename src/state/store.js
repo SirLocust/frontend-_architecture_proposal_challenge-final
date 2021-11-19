@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { curryGetDefaultMiddleware } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
+import authReducer from './Auth/authReducer';
 import thunk from 'redux-thunk';
 
 export default configureStore({
-  reducer: {},
+  reducer: {
+    authReducer,
+  },
   middleware: (curryGetDefaultMiddleware) =>
-    curryGetDefaultMiddleware().cocat(thunk),
+    curryGetDefaultMiddleware().concat(thunk),
 });
