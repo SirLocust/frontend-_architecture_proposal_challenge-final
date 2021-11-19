@@ -1,9 +1,10 @@
 import React from 'react';
+import { GoogleButtonComponent } from './componentes/GoogleButtonComponent';
 
 export const LoginPageComponent = () => {
   return (
     <div>
-      <h1>hola mundo</h1>
+      <GoogleButtonComponent />
     </div>
   );
 };

@@ -4,7 +4,7 @@ export const loginWhitGoogle = createAsyncThunk(
   'auth/loginWhitGoogleStatus',
   async () => {
     const response = await loginGoogle();
-    return response.user;
+    return response.user.uid;
   }
 );
 

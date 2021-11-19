@@ -14,7 +14,7 @@ export const authReducer = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(loginWhitGoogle.fulfilled, (state, action) => {
-        state.user = action.payload.user;
+        state.user = action.payload;
         state.loading = false;
       })
       .addCase(loginWhitGoogle.pending, (state) => {
