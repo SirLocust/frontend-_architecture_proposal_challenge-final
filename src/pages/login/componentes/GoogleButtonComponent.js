@@ -10,7 +10,7 @@ export const GoogleButtonComponent = ({ history }) => {
     dispatch(loginWhitGoogle())
       .then(unwrapResult)
       .then(() => {
-        navigate('/home');
+        navigate('/dashboard');
       });
   };
 
